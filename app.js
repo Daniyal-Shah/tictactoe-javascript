@@ -116,7 +116,7 @@ this.onkeydown=(e)=>{
                 if( selectedBox ==boxes[0])
                 {
                     selectedBox.style.backgroundColor=unselectedColor;
-                    selectedBox= boxes[8];
+                    selectedBox= boxes[boxes.length-1];
                     selectedBox.style.backgroundColor=selectedColor;          
                     break;      
                 }
@@ -134,7 +134,7 @@ this.onkeydown=(e)=>{
         //Key up
     else if(e.keyCode === 38)
     {
-        for(var i=0;i<9;i++)
+        for(var i=0;i<boxes.length;i++)
         {
             if(boxes[i]===selectedBox)
             {
@@ -148,7 +148,7 @@ this.onkeydown=(e)=>{
                 else
                 {
                     selectedBox.style.backgroundColor=unselectedColor;
-                    selectedBox= boxes[i-3];
+                    selectedBox= boxes[i-Math.floor(boxes.length/3)];
                     selectedBox.style.backgroundColor=selectedColor;
                     break;
                 }
@@ -160,11 +160,11 @@ this.onkeydown=(e)=>{
         //Key right
     else if(e.keyCode === 39)
     {
-        for(var i=0;i<9;i++)
+        for(var i=0;i<boxes.length;i++)
         {
             if(boxes[i]===selectedBox)
             {
-                if( selectedBox ==boxes[8])
+                if( selectedBox ==boxes[boxes.length-1])
                 {
                     selectedBox.style.backgroundColor=unselectedColor;
                     selectedBox= boxes[0];
@@ -187,7 +187,7 @@ this.onkeydown=(e)=>{
         //Key down
     else if(e.keyCode === 40)
     {
-        for(var i=0;i<9;i++)
+        for(var i=0;i<boxes.length;i++)
         {
             if(boxes[i]===selectedBox)
             {
@@ -200,7 +200,7 @@ this.onkeydown=(e)=>{
                 }
                 else{
                     selectedBox.style.backgroundColor=unselectedColor;
-                    selectedBox= boxes[i+3];
+                    selectedBox= boxes[i+Math.floor(boxes.length/3)];
                     selectedBox.style.backgroundColor=selectedColor;
                     break;
                 }
@@ -217,22 +217,39 @@ this.onkeydown=(e)=>{
             selectedBox.innerText= player1.sign;
             selectedBox.style.backgroundColor="red";
 
-            for(var i=0;i<9;i++)
+            for(var i=0;i<boxes.length;i++)
+            {
+                if(boxes[i] ===selectedBox)
+                {
+                    selectedBox=boxes[i+1];
+                    selectedBox.style.backgroundColor=selectedColor
+                    boxes.splice(i,1)
+                    break;
+                }
+            }
+            player1.turn=false;
+            player2.turn=true;
+        }
+        else
+        {
+            selectedBox.innerText= player2.sign;
+            selectedBox.style.backgroundColor="blue";
+
+            for(var i=0;i<boxes.length;i++)
             {
                 if(boxes[i] ===selectedBox)
                 {
                     selectedBox=boxes[i+1]
                     selectedBox.style.backgroundColor=selectedColor
-                    delete boxes[i];
+                    boxes.splice(i,1)
                     break;
                 }
             }
-        }
-        else
-        {
-
+            player1.turn=true;
+            player2.turn=false;
         }
 
+        console.log(boxes)
 
     }
 
