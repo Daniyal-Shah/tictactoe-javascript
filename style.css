@@ -1,8 +1,14 @@
-.col-3 {
-  height: 7rem;
-  /* width: 2rem; */
+body {
+  height: 100vh;
+}
+.col {
+  height: 8rem;
+  width: 3rem;
   border: 1px solid black;
   font-size: larger;
   text-align: center;
   color: white;
+}
+.container-fluid {
+  width: 35rem;
 }

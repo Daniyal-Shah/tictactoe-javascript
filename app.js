@@ -84,6 +84,8 @@
 
 
 const boxes=[];
+const selectedColor="gray";
+const unselectedColor=""
 
 for(var i=0; i<9;i++)
 
@@ -92,7 +94,20 @@ for(var i=0; i<9;i++)
 }
 
 var selectedBox= boxes[0];
-selectedBox.style.backgroundColor="blue";
+selectedBox.style.backgroundColor=selectedColor;
+
+document.getElementById("resetButton").addEventListener('click',()=>{
+
+    boxes.forEach((box)=>{
+        box.style.backgroundColor=unselectedColor;
+
+    });
+    
+    selectedBox= boxes[0];
+    selectedBox.style.backgroundColor=selectedColor;
+
+})
+
 
 this.onkeydown=(e)=>{
 
@@ -105,16 +120,16 @@ this.onkeydown=(e)=>{
             {
                 if( selectedBox ==boxes[0])
                 {
-                    selectedBox.style.backgroundColor="white";
+                    selectedBox.style.backgroundColor=unselectedColor;
                     selectedBox= boxes[8];
-                    selectedBox.style.backgroundColor="blue";          
+                    selectedBox.style.backgroundColor=selectedColor;          
                     break;      
                 }
                 else
                 {
-                    selectedBox.style.backgroundColor="white";
+                    selectedBox.style.backgroundColor=unselectedColor;
                     selectedBox= boxes[i-1];
-                    selectedBox.style.backgroundColor="blue";
+                    selectedBox.style.backgroundColor=selectedColor;
                     break;
                 }
                 break;
@@ -130,16 +145,16 @@ this.onkeydown=(e)=>{
             {
                 if(selectedBox=== boxes[0] |selectedBox=== boxes[1]|selectedBox=== boxes[2] )
                 {
-                    selectedBox.style.backgroundColor="white";
+                    selectedBox.style.backgroundColor=unselectedColor;
                     selectedBox= boxes[i+6];
-                    selectedBox.style.backgroundColor="blue";
+                    selectedBox.style.backgroundColor=selectedColor;
                     break;
                 }
                 else
                 {
-                    selectedBox.style.backgroundColor="white";
+                    selectedBox.style.backgroundColor=unselectedColor;
                     selectedBox= boxes[i-3];
-                    selectedBox.style.backgroundColor="blue";
+                    selectedBox.style.backgroundColor=selectedColor;
                     break;
                 }
 
@@ -156,16 +171,16 @@ this.onkeydown=(e)=>{
             {
                 if( selectedBox ==boxes[8])
                 {
-                    selectedBox.style.backgroundColor="white";
+                    selectedBox.style.backgroundColor=unselectedColor;
                     selectedBox= boxes[0];
-                    selectedBox.style.backgroundColor="blue";         
+                    selectedBox.style.backgroundColor=selectedColor;         
                     break;       
                 }
                 else
                 {
-                    selectedBox.style.backgroundColor="white";
+                    selectedBox.style.backgroundColor=unselectedColor;
                     selectedBox= boxes[i+1];
-                    selectedBox.style.backgroundColor="blue";
+                    selectedBox.style.backgroundColor=selectedColor;
                     console.log(selectedBox)
                     break;
                 }
@@ -183,15 +198,15 @@ this.onkeydown=(e)=>{
             {
                 if(selectedBox=== boxes[6] |selectedBox=== boxes[7]|selectedBox=== boxes[8] )
                 {
-                    selectedBox.style.backgroundColor="white";
+                    selectedBox.style.backgroundColor=unselectedColor;
                     selectedBox= boxes[i-6];
-                    selectedBox.style.backgroundColor="blue";
+                    selectedBox.style.backgroundColor=selectedColor;
                     break;
                 }
                 else{
-                    selectedBox.style.backgroundColor="white";
+                    selectedBox.style.backgroundColor=unselectedColor;
                     selectedBox= boxes[i+3];
-                    selectedBox.style.backgroundColor="blue";
+                    selectedBox.style.backgroundColor=selectedColor;
                     console.log(selectedBox)
                     break;
                 }
@@ -201,7 +216,7 @@ this.onkeydown=(e)=>{
     }
         //Key else
     else{
-
+        console.log("wrong key selection")
     }
     
 }
