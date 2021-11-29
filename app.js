@@ -141,7 +141,7 @@ this.onkeydown=(e)=>{
                 if(selectedBox=== boxes[0] |selectedBox=== boxes[1]|selectedBox=== boxes[2] )
                 {
                     selectedBox.style.backgroundColor=unselectedColor;
-                    selectedBox= boxes[i+6];
+                    selectedBox= boxes[i+Math.floor(boxes.length/3)];
                     selectedBox.style.backgroundColor=selectedColor;
                     break;
                 }
