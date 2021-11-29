@@ -261,7 +261,15 @@ this.onkeydown=(e)=>{
 }
 
 document.getElementById("resetButton").addEventListener('click',()=>{
+
+    //Getting all boxes in a array
+    for(var i=0; i<9;i++)
+    {
+        boxes[i] =document.querySelector(`.box-${i+1}`);
+    }
+
     boxes.forEach((box)=>{
+        box.innerText="";
         box.style.backgroundColor=unselectedColor;
 
     });
