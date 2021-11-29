@@ -83,32 +83,27 @@
 
 
 
+//settiing things to use
 const boxes=[];
 const selectedColor="gray";
-const unselectedColor=""
+const unselectedColor="white";
 
+//Players
+const player1={score:0, turn:true, sign:"X"}
+const player2={score:0, turn:false, sign:"O"}
+
+//Getting all boxes in a array
 for(var i=0; i<9;i++)
-
 {
     boxes[i] =document.querySelector(`.box-${i+1}`);
 }
 
+//at start box-1 always be the selected box
 var selectedBox= boxes[0];
 selectedBox.style.backgroundColor=selectedColor;
 
-document.getElementById("resetButton").addEventListener('click',()=>{
 
-    boxes.forEach((box)=>{
-        box.style.backgroundColor=unselectedColor;
-
-    });
-    
-    selectedBox= boxes[0];
-    selectedBox.style.backgroundColor=selectedColor;
-
-})
-
-
+//key event for the game
 this.onkeydown=(e)=>{
 
     //Key Left
@@ -181,7 +176,7 @@ this.onkeydown=(e)=>{
                     selectedBox.style.backgroundColor=unselectedColor;
                     selectedBox= boxes[i+1];
                     selectedBox.style.backgroundColor=selectedColor;
-                    console.log(selectedBox)
+
                     break;
                 }
 
@@ -207,19 +202,56 @@ this.onkeydown=(e)=>{
                     selectedBox.style.backgroundColor=unselectedColor;
                     selectedBox= boxes[i+3];
                     selectedBox.style.backgroundColor=selectedColor;
-                    console.log(selectedBox)
                     break;
                 }
 
             }
         }
     }
-        //Key else
+
+    //Enter Key
+    else if (e.keyCode===13)
+    {
+        if(player1.turn)
+        {
+            selectedBox.innerText= player1.sign;
+            selectedBox.style.backgroundColor="red";
+
+            for(var i=0;i<9;i++)
+            {
+                if(boxes[i] ===selectedBox)
+                {
+                    selectedBox=boxes[i+1]
+                    selectedBox.style.backgroundColor=selectedColor
+                    delete boxes[i];
+                    break;
+                }
+            }
+        }
+        else
+        {
+
+        }
+
+
+    }
+
+    //Key else
     else{
-        console.log("wrong key selection")
+        console.log(e.keyCode, "wrong key selection")
     }
     
 }
+
+document.getElementById("resetButton").addEventListener('click',()=>{
+    boxes.forEach((box)=>{
+        box.style.backgroundColor=unselectedColor;
+
+    });
+    selectedBox= boxes[0];
+    selectedBox.style.backgroundColor=selectedColor;
+})
+
 
 
 
