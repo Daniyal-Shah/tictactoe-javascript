@@ -1,0 +1,11 @@
+.col-3 {
+  height: 7rem;
+  /* width: 2rem; */
+  border: 1px solid black;
+  font-size: larger;
+  text-align: center;
+  color: white;
+}
+
+.box-1 {
+}
