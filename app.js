@@ -53,10 +53,14 @@
 
 
 // const addedButton= document.getElementById("addedButton");
+
+
+
 // addedButton.addEventListener('click',()=>{
 //     let inputValue =document.getElementById("inputValue");
+
 //     let inputField =`<li class="list-group-item d-flex justify-content-between">
-//     ${inputValue.value} 
+// ${inputValue.value} 
 
 //         <img src="./close_black_24dp.svg" class="btn btnCancel" alt="">
 
@@ -82,12 +86,13 @@
 const boxes=[];
 
 for(var i=0; i<9;i++)
+
 {
     boxes[i] =document.querySelector(`.box-${i+1}`);
 }
 
 var selectedBox= boxes[0];
-selectedBox.style.backgroundColor="black";
+selectedBox.style.backgroundColor="blue";
 
 this.onkeydown=(e)=>{
 
@@ -102,14 +107,14 @@ this.onkeydown=(e)=>{
                 {
                     selectedBox.style.backgroundColor="white";
                     selectedBox= boxes[8];
-                    selectedBox.style.backgroundColor="black";          
+                    selectedBox.style.backgroundColor="blue";          
                     break;      
                 }
                 else
                 {
                     selectedBox.style.backgroundColor="white";
                     selectedBox= boxes[i-1];
-                    selectedBox.style.backgroundColor="black";
+                    selectedBox.style.backgroundColor="blue";
                     break;
                 }
                 break;
@@ -127,14 +132,14 @@ this.onkeydown=(e)=>{
                 {
                     selectedBox.style.backgroundColor="white";
                     selectedBox= boxes[i+6];
-                    selectedBox.style.backgroundColor="black";
+                    selectedBox.style.backgroundColor="blue";
                     break;
                 }
                 else
                 {
                     selectedBox.style.backgroundColor="white";
                     selectedBox= boxes[i-3];
-                    selectedBox.style.backgroundColor="black";
+                    selectedBox.style.backgroundColor="blue";
                     break;
                 }
 
@@ -153,14 +158,14 @@ this.onkeydown=(e)=>{
                 {
                     selectedBox.style.backgroundColor="white";
                     selectedBox= boxes[0];
-                    selectedBox.style.backgroundColor="black";         
+                    selectedBox.style.backgroundColor="blue";         
                     break;       
                 }
                 else
                 {
                     selectedBox.style.backgroundColor="white";
                     selectedBox= boxes[i+1];
-                    selectedBox.style.backgroundColor="black";
+                    selectedBox.style.backgroundColor="blue";
                     console.log(selectedBox)
                     break;
                 }
@@ -180,13 +185,13 @@ this.onkeydown=(e)=>{
                 {
                     selectedBox.style.backgroundColor="white";
                     selectedBox= boxes[i-6];
-                    selectedBox.style.backgroundColor="black";
+                    selectedBox.style.backgroundColor="blue";
                     break;
                 }
                 else{
                     selectedBox.style.backgroundColor="white";
                     selectedBox= boxes[i+3];
-                    selectedBox.style.backgroundColor="black";
+                    selectedBox.style.backgroundColor="blue";
                     console.log(selectedBox)
                     break;
                 }
