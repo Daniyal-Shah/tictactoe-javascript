@@ -1,87 +1,4 @@
 
-// const btns=document.querySelectorAll(".btn");
-
-// console.log(btns)
-
-// btns.forEach(element => {
-
-//     element.addEventListener('click', ()=>{
-//         element.innerHTML="clicked";
-//         element.classList.remove("btn-primary")
-//         element.classList.add("btn-success")
-//     })    
-// });
-
-// if(document.querySelectorAll('.btn').clicked == true)
-// {
-//    console.log("button was clicked");
-// }
-
-// const btn=document.querySelector(".btn-synth");
-// btn.addEventListener('click', (e)=>{
-
-//     console.log(e.target);
-
-// })    
-
-
-// const input = document.querySelector("input");
-
-// this.onkeydown=(e)=>{
-
-//     if(e.keyCode === 37)
-//     {
-//         console.log("key left")
-//     }
-//     else if(e.keyCode === 38)
-//     {
-//         console.log("key up")
-//     }
-//     else if(e.keyCode === 39)
-//     {
-//         console.log("key right")
-//     }
-//     else if(e.keyCode === 40)
-//     {
-//         console.log("key down")
-//     }
-//     else{
-//         console.log("other key")
-//     }
-    
-// }
-
-
-// const addedButton= document.getElementById("addedButton");
-
-
-
-// addedButton.addEventListener('click',()=>{
-//     let inputValue =document.getElementById("inputValue");
-
-//     let inputField =`<li class="list-group-item d-flex justify-content-between">
-// ${inputValue.value} 
-
-//         <img src="./close_black_24dp.svg" class="btn btnCancel" alt="">
-
-//     </li>`;
-
-//     inputValue.value="";
-//     document.getElementById("listGroup").insertAdjacentHTML('beforeend',inputField);
-
-//     const btnCancel= document.querySelectorAll(".btnCancel");
-//     btnCancel.forEach((element)=>{
-//         element.addEventListener('click',(e)=>
-//         {
-//             e.target.parentElement.remove();
-//         })
-//     })
-// })
-
-
-
-
-
 
 //settiing things to use
 const boxes=[];
@@ -276,6 +193,64 @@ document.getElementById("resetButton").addEventListener('click',()=>{
     selectedBox= boxes[0];
     selectedBox.style.backgroundColor=selectedColor;
 })
+
+
+
+// const btns=document.querySelectorAll(".btn");
+
+// console.log(btns)
+
+// btns.forEach(element => {
+
+//     element.addEventListener('click', ()=>{
+//         element.innerHTML="clicked";
+//         element.classList.remove("btn-primary")
+//         element.classList.add("btn-success")
+//     })    
+// });
+
+// if(document.querySelectorAll('.btn').clicked == true)
+// {
+//    console.log("button was clicked");
+// }
+
+// const btn=document.querySelector(".btn-synth");
+// btn.addEventListener('click', (e)=>{
+
+//     console.log(e.target);
+
+// })    
+
+
+// const input = document.querySelector("input");
+
+// this.onkeydown=(e)=>{
+
+//     if(e.keyCode === 37)
+//     {
+//         console.log("key left")
+//     }
+//     else if(e.keyCode === 38)
+//     {
+//         console.log("key up")
+//     }
+//     else if(e.keyCode === 39)
+//     {
+//         console.log("key right")
+//     }
+//     else if(e.keyCode === 40)
+//     {
+//         console.log("key down")
+//     }
+//     else{
+//         console.log("other key")
+//     }
+    
+// }
+
+
+
+
 
 
 
